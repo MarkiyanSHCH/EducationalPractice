@@ -7,9 +7,6 @@ using namespace std;
 void menu() {
     Menu prog;
     Command com;
-    com.readCustomerFile();
-    com.readEmployeeFile();
-    com.readDriverFile();
 
     short userInput = NULL;
     while (true) {
@@ -18,26 +15,26 @@ void menu() {
         switch (userInput)
         {
         case 1: {
-            if (com.cstV.size() == 0) {
+            if (com.customerRepository.data.size() == 0) {
                 system("CLS");
                 cout << "No Customer" << endl;
                 system("Pause");
             }
             else {
-                com.showAll("Customers", com.cstV);
+                com.showCustomer();
                 system("Pause");
             }
             break;
 
         }
         case 2: {
-            if (com.empV.size() == 0) {
+            if (com.employeeRepository.data.size() == 0) {
                 system("CLS");
                 cout << "No Employee" << endl;
                 system("Pause");
             }
             else {
-                com.showAll("Employees", com.empV);
+                com.showEmployee();
                 system("Pause");
             }
             break;
@@ -72,7 +69,7 @@ void menu() {
                             break;
                         }
                         case 2: {
-                            com.showAll("Customers", com.cstV);
+                            com.showCustomer();
                             cout << "Select Customer you want delete : ";
                             short selCustomer;
                             cin >> selCustomer;
@@ -82,35 +79,35 @@ void menu() {
                             break;
                         }
                         case 3: {
-                            com.showAll("Customers", com.cstV);
+                            com.showCustomer();
                             cout << "Select Customer you want edit : ";
                             short selCustomer;
                             cin >> selCustomer;
-                            ((Customer*)com.cstV[selCustomer - 1])->setting();
-                            com.writeCustomerFile();
+                            ((Customer*)com.customerRepository.data[selCustomer - 1])->setting();
+                            com.customerRepository.WriteToStorage();
                             cout << "Customer Edited Successfully" << endl;
                             system("Pause");
                             break;
 
                         }
                         case 4: {
-                            com.showAll("Customers", com.cstV);
+                            com.showCustomer();
                             cout << "Select Customer you want edit address : ";
                             short selCustomer;
                             cin >> selCustomer;
-                            ((Customer*)com.cstV[selCustomer - 1])->changeAddress();
-                            com.writeCustomerFile();
+                            ((Customer*)com.customerRepository.data[selCustomer - 1])->changeAddress();
+                            com.customerRepository.WriteToStorage();
                             cout << "Customer Edited Successfully" << endl;
                             system("Pause");
                             break;
                         }
                         case 5: {
-                            com.showAll("Customers", com.cstV);
+                            com.showCustomer();
                             cout << "Select Customer you want add bonus : ";
                             short selCustomer;
                             cin >> selCustomer;
-                            ((Customer*)com.cstV[selCustomer - 1])->addBonus();
-                            com.writeCustomerFile();
+                            ((Customer*)com.customerRepository.data[selCustomer - 1])->addBonus();
+                            com.customerRepository.WriteToStorage();
                             cout << "Bonus Added Successfully" << endl;
                             system("Pause");
                             break;
@@ -143,7 +140,7 @@ void menu() {
                             break;
                         }
                         case 2: {
-                            com.showAll("Employees", com.empV);
+                            com.showEmployee();
                             cout << "Select Employee you want delete : ";
                             short selCustomer;
                             cin >> selCustomer;
@@ -153,24 +150,24 @@ void menu() {
                             break;
                         }
                         case 3: {
-                            com.showAll("Employees", com.empV);
+                            com.showEmployee();
                             cout << "Select Employee you want edit : ";
                             short selCustomer;
                             cin >> selCustomer;
-                            ((Employee*)com.empV[selCustomer - 1])->setting();
-                            com.writeEmployeeFile();
+                            ((Employee*)com.employeeRepository.data[selCustomer - 1])->setting();
+                            com.employeeRepository.WriteToStorage();
                             cout << "Employee Edited Successfully" << endl;
                             system("Pause");
                             break;
 
                         }
                         case 4: {
-                            com.showAll("Employees", com.empV);
+                            com.showEmployee();
                             cout << "Select Employee you want edit address : ";
                             short selCustomer;
                             cin >> selCustomer;
-                            ((Employee*)com.empV[selCustomer - 1])->setRating();
-                            com.writeEmployeeFile();
+                            ((Employee*)com.employeeRepository.data[selCustomer - 1])->setRating();
+                            com.employeeRepository.WriteToStorage();
                             cout << "Rating Successfully" << endl;
                             system("Pause");
                             break;
@@ -204,7 +201,7 @@ void menu() {
                             break;
                         }
                         case 2: {
-                            com.showAll("Driver", com.driV);
+                            com.showDriver();
                             cout << "Select Driver you want delete : ";
                             short selCustomer;
                             cin >> selCustomer;
@@ -214,24 +211,24 @@ void menu() {
                             break;
                         }
                         case 3: {
-                            com.showAll("Driver", com.driV);
+                            com.showDriver();
                             cout << "Select Driver you want edit : ";
                             short selCustomer;
                             cin >> selCustomer;
-                            ((Driver*)com.driV[selCustomer - 1])->setting();
-                            com.writeDriverFile();
+                            ((Driver*)com.driverRepository.data[selCustomer - 1])->setting();
+                            com.driverRepository.WriteToStorage();
                             cout << "Driver Edited Successfully" << endl;
                             system("Pause");
                             break;
 
                         }
                         case 4: {
-                            com.showAll("Driver", com.driV);
+                            com.showDriver();
                             cout << "Select Driver you want edit address : ";
                             short selCustomer;
                             cin >> selCustomer;
-                            ((Driver*)com.driV[selCustomer - 1])->setRating();
-                            com.writeDriverFile();
+                            ((Driver*)com.driverRepository.data[selCustomer - 1])->setRating();
+                            com.driverRepository.WriteToStorage();
                             cout << "Rating Successfully" << endl;
                             system("Pause");
                             break;
@@ -263,13 +260,13 @@ void menu() {
             break;
         }
         case 5: {
-            if (com.driV.size() == 0) {
+            if (com.driverRepository.data.size() == 0) {
                 system("CLS");
                 cout << "No Driver" << endl;
                 system("Pause");
             }
             else {
-                com.showAll("Driver", com.driV);
+                com.showDriver();
                 system("Pause");
             }
             break;
@@ -281,6 +278,8 @@ void menu() {
         }
     }
 }
+
+
 
 int main()
 {

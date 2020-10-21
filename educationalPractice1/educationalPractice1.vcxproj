@@ -140,20 +140,31 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="command.cpp" />
+    <ClCompile Include="commandtmp.cpp" />
     <ClCompile Include="customer.cpp" />
+    <ClCompile Include="CustomerRepository.cpp" />
     <ClCompile Include="driver.cpp" />
+    <ClCompile Include="DriverRepository.cpp" />
     <ClCompile Include="educationalPractice1.cpp" />
     <ClCompile Include="employee.cpp" />
+    <ClCompile Include="EmployeeRepository.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="person.cpp" />
+    <ClCompile Include="Repository.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="command.h" />
+    <ClInclude Include="commandtmp.h" />
     <ClInclude Include="customer.h" />
+    <ClInclude Include="CustomerRepository.h" />
     <ClInclude Include="driver.h" />
+    <ClInclude Include="DriverRepository.h" />
     <ClInclude Include="employee.h" />
+    <ClInclude Include="EmployeeRepository.h" />
+    <ClInclude Include="Entity.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="person.h" />
+    <ClInclude Include="Repository.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
