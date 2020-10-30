@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{eab97fb3-fefd-4380-8acf-bc3e31875d56}</ProjectGuid>
-    <RootNamespace>educationalPractice1</RootNamespace>
+    <ProjectGuid>{dbce041c-6dbb-4d64-a2ad-af7de565d09d}</ProjectGuid>
+    <RootNamespace>User</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -46,7 +46,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -130,6 +130,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>../educationalPractice1/</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,27 +140,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="command.cpp" />
-    <ClCompile Include="customer.cpp" />
-    <ClCompile Include="CustomerRepository.cpp" />
-    <ClCompile Include="driver.cpp" />
-    <ClCompile Include="DriverRepository.cpp" />
-    <ClCompile Include="employee.cpp" />
-    <ClCompile Include="EmployeeRepository.cpp" />
-    <ClCompile Include="person.cpp" />
-    <ClCompile Include="Repository.cpp" />
+    <ProjectReference Include="..\educationalPractice1\educationalPractice1.vcxproj">
+      <Project>{eab97fb3-fefd-4380-8acf-bc3e31875d56}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="command.h" />
-    <ClInclude Include="customer.h" />
-    <ClInclude Include="CustomerRepository.h" />
-    <ClInclude Include="driver.h" />
-    <ClInclude Include="DriverRepository.h" />
-    <ClInclude Include="employee.h" />
-    <ClInclude Include="EmployeeRepository.h" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="person.h" />
-    <ClInclude Include="Repository.h" />
+    <ClCompile Include="commandtmp.cpp" />
+    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="Source.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="commandtmp.h" />
+    <ClInclude Include="menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -21,9 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="educationalPractice1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="command.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -36,9 +33,6 @@
     <ClCompile Include="employee.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Menu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -47,9 +41,6 @@
     </ClCompile>
     <ClCompile Include="EmployeeRepository.cpp">
       <Filter>Source Files\Repository</Filter>
-    </ClCompile>
-    <ClCompile Include="commandtmp.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CustomerRepository.cpp">
       <Filter>Source Files\Repository</Filter>
@@ -63,9 +54,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="employee.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="person.h">
@@ -85,9 +73,6 @@
     </ClInclude>
     <ClInclude Include="EmployeeRepository.h">
       <Filter>Header Files\Repository</Filter>
-    </ClInclude>
-    <ClInclude Include="commandtmp.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CustomerRepository.h">
       <Filter>Header Files\Repository</Filter>

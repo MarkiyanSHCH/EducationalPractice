@@ -4,17 +4,17 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "employee.h"
-#include "customer.h"
-#include "driver.h"
-#include "EmployeeRepository.h"
-#include "CustomerRepository.h"
-#include "DriverRepository.h"
+#include "../educationalPractice1/employee.h"
+#include "../educationalPractice1/customer.h"
+#include "../educationalPractice1/driver.h"
+#include "../educationalPractice1/EmployeeRepository.h"
+#include "../educationalPractice1/CustomerRepository.h"
+#include "../educationalPractice1/DriverRepository.h"
 using namespace std;
 
 class Command {
 public:
-	
+
 	EmployeeRepository employeeRepository = EmployeeRepository(true);
 	CustomerRepository customerRepository = CustomerRepository(true);
 	DriverRepository driverRepository = DriverRepository(true);

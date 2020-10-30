@@ -1,11 +1,11 @@
-#include "menu.h"
 #include <iostream>
+#include "menu.h"
 
 using namespace std;
 
 void Menu::showMenu() {
     system("CLS");
-    cout << "\t\t\tWelcome to the MainMenu! \n" <<
+    cout << "\t\t\tWelcome to the MainMenu for Admin! \n" <<
         "\t\tSelect an option from the following: \n" <<
         "1.....Show Customers\n" <<
         "2.....Show Employee\n" <<

@@ -17,7 +17,7 @@ void Command::addEmployee() {
     Employee* tmp = new Employee(firstNameTmp, lastNameTmp, ageTmp, starsTmp);
 
     employeeRepository.Add(*tmp);
-    
+
 }
 
 void Command::addCustomer() {
@@ -27,7 +27,7 @@ void Command::addCustomer() {
     short ageTmp;
     string addressTmp;
     short bonusTmp = NULL;
-    
+
     cout << "Enter first name : ";
     cin >> firstNameTmp;
     cout << "Enter last name : ";
@@ -36,7 +36,7 @@ void Command::addCustomer() {
     cin >> ageTmp;
     cout << "Enter address : ";
     cin >> addressTmp;
-    
+
     Customer* tmp = new Customer(firstNameTmp, lastNameTmp, ageTmp, addressTmp, bonusTmp);
 
     customerRepository.Add(*tmp);
@@ -49,7 +49,7 @@ void Command::addDriver() {
     short ageTmp;
     short starsTmp = NULL;
     string car;
-    
+
     cout << "Enter first name : ";
     cin >> firstNameTmp;
     cout << "Enter last name : ";
@@ -59,7 +59,7 @@ void Command::addDriver() {
     cout << "Enter car : ";
     cin >> car;
     Driver* tmp = new Driver(firstNameTmp, lastNameTmp, ageTmp, starsTmp, car);
-    
+
     driverRepository.Add(*tmp);
 }
 
@@ -71,7 +71,7 @@ void Command::showEmployee() {
         tmp->showInfo();
         cout << endl;
     }
- 
+
 }
 
 void Command::showCustomer() {
@@ -105,7 +105,7 @@ void Command::deleteCustomer(int ind) {
 }
 
 void Command::deleteDriver(int ind) {
-  
+
     driverRepository.data.erase(driverRepository.data.begin() + ind);
     driverRepository.WriteToStorage();
 }
