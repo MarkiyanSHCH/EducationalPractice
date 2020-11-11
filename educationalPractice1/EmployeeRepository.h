@@ -9,7 +9,7 @@ class EmployeeRepository : public Repository<Employee>
 public:
 	EmployeeRepository(bool sync = false);
 	~EmployeeRepository();
-	bool Add(Employee& emp);
+	bool Add(Employee emp);
 	void ReadFromStorage();
 	void WriteToStorage();
 };

@@ -12,9 +12,9 @@ EmployeeRepository::~EmployeeRepository()
 
 }
 
-bool EmployeeRepository::Add(Employee& emp)
+bool EmployeeRepository::Add(Employee emp)
 {
-	return Repository::Add(&emp);
+	return Repository::Add(emp);
 }
 
 void EmployeeRepository::ReadFromStorage()
@@ -34,8 +34,8 @@ void EmployeeRepository::ReadFromStorage()
 	for (int i = 0; myfile; i++) {
 		if (myfile >> firstName >> lastName >> age >> stars)
 		{
-			Employee* tmp = new Employee(firstName, lastName, age, stars);
-			Add(*tmp);
+			Employee tmp(firstName, lastName, age, stars);
+			Add(tmp);
 		}
 	}
 	cout << "File Employee.txt Read Successfully" << endl;
@@ -54,7 +54,7 @@ void EmployeeRepository::WriteToStorage()
 	}
 	else {
 		for (int i = 0; i < data.size(); i++) {
-			outf << ((Employee*)data[i])->returnStringInfo() << endl;
+			outf << data[i].returnStringInfo() << endl;
 
 		}
 	}

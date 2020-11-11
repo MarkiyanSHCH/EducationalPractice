@@ -1,2 +1,4 @@
 a a 10 lviv 0
 e e 3 e 0
+u u 3 u 0
+q q 4 q 0

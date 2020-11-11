@@ -83,7 +83,7 @@ void menu() {
                             cout << "Select Customer you want edit : ";
                             short selCustomer;
                             cin >> selCustomer;
-                            ((Customer*)com.customerRepository.data[selCustomer - 1])->setting();
+                            com.customerRepository.data[selCustomer - 1].setting();
                             com.customerRepository.WriteToStorage();
                             cout << "Customer Edited Successfully" << endl;
                             system("Pause");
@@ -95,7 +95,7 @@ void menu() {
                             cout << "Select Customer you want edit address : ";
                             short selCustomer;
                             cin >> selCustomer;
-                            ((Customer*)com.customerRepository.data[selCustomer - 1])->changeAddress();
+                            com.customerRepository.data[selCustomer - 1].changeAddress();
                             com.customerRepository.WriteToStorage();
                             cout << "Customer Edited Successfully" << endl;
                             system("Pause");
@@ -106,7 +106,7 @@ void menu() {
                             cout << "Select Customer you want add bonus : ";
                             short selCustomer;
                             cin >> selCustomer;
-                            ((Customer*)com.customerRepository.data[selCustomer - 1])->addBonus();
+                            com.customerRepository.data[selCustomer - 1].addBonus();
                             com.customerRepository.WriteToStorage();
                             cout << "Bonus Added Successfully" << endl;
                             system("Pause");
@@ -154,7 +154,7 @@ void menu() {
                             cout << "Select Employee you want edit : ";
                             short selCustomer;
                             cin >> selCustomer;
-                            ((Employee*)com.employeeRepository.data[selCustomer - 1])->setting();
+                            com.employeeRepository.data[selCustomer - 1].setting();
                             com.employeeRepository.WriteToStorage();
                             cout << "Employee Edited Successfully" << endl;
                             system("Pause");
@@ -166,7 +166,7 @@ void menu() {
                             cout << "Select Employee you want edit address : ";
                             short selCustomer;
                             cin >> selCustomer;
-                            ((Employee*)com.employeeRepository.data[selCustomer - 1])->setRating();
+                            com.employeeRepository.data[selCustomer - 1].setRating();
                             com.employeeRepository.WriteToStorage();
                             cout << "Rating Successfully" << endl;
                             system("Pause");
@@ -215,7 +215,7 @@ void menu() {
                             cout << "Select Driver you want edit : ";
                             short selCustomer;
                             cin >> selCustomer;
-                            ((Driver*)com.driverRepository.data[selCustomer - 1])->setting();
+                           com.driverRepository.data[selCustomer - 1].setting();
                             com.driverRepository.WriteToStorage();
                             cout << "Driver Edited Successfully" << endl;
                             system("Pause");
@@ -227,7 +227,7 @@ void menu() {
                             cout << "Select Driver you want edit address : ";
                             short selCustomer;
                             cin >> selCustomer;
-                            ((Driver*)com.driverRepository.data[selCustomer - 1])->setRating();
+                            com.driverRepository.data[selCustomer - 1].setRating();
                             com.driverRepository.WriteToStorage();
                             cout << "Rating Successfully" << endl;
                             system("Pause");

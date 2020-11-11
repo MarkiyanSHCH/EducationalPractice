@@ -9,7 +9,7 @@ class CustomerRepository : public Repository<Customer>
 public:
 	CustomerRepository(bool sync = false);
 	~CustomerRepository();
-	bool Add(Customer& emp);
+	bool Add(Customer emp);
 	void ReadFromStorage();
 	void WriteToStorage();
 };

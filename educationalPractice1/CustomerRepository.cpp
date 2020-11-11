@@ -12,9 +12,9 @@ CustomerRepository::~CustomerRepository()
 
 }
 
-bool CustomerRepository::Add(Customer& emp)
+bool CustomerRepository::Add(Customer emp)
 {
-	return Repository::Add(&emp);
+	return Repository::Add(emp);
 }
 
 void CustomerRepository::ReadFromStorage()
@@ -35,8 +35,8 @@ void CustomerRepository::ReadFromStorage()
 	for (int i = 0; myfile; i++) {
 	    if (myfile >> firstName >> lastName >> age >> address >> bonus)
 	    {
-	        Customer* tmp = new Customer(firstName, lastName, age, address, bonus);
-			Add(*tmp);
+	        Customer tmp(firstName, lastName, age, address, bonus);
+			Add(tmp);
 	    }
 	    
 	}
@@ -56,7 +56,7 @@ void CustomerRepository::WriteToStorage()
 	}
 	else {
 		for (int i = 0; i < data.size(); i++) {
-			outf << ((Customer*)data[i])->returnStringInfo() << endl;
+			outf << data[i].returnStringInfo() << endl;
 
 		}
 	}

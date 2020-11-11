@@ -12,9 +12,9 @@ DriverRepository::~DriverRepository()
 
 }
 
-bool DriverRepository::Add(Driver& emp)
+bool DriverRepository::Add(Driver emp)
 {
-	return Repository::Add(&emp);
+	return Repository::Add(emp);
 }
 
 void DriverRepository::ReadFromStorage()
@@ -35,8 +35,8 @@ void DriverRepository::ReadFromStorage()
 	for (int i = 0; myfile; i++) {
 		if (myfile >> firstName >> lastName >> age >> stars >> car)
 		{
-			Driver* tmp = new Driver(firstName, lastName, age, stars, car);
-			Add(*tmp);
+			Driver tmp(firstName, lastName, age, stars, car);
+			Add(tmp);
 		}
 	}
 	cout << "File Driver.txt Read Successfully" << endl;
@@ -55,7 +55,7 @@ void DriverRepository::WriteToStorage()
 	}
 	else {
 		for (int i = 0; i < data.size(); i++) {
-			outf << ((Driver*)data[i])->returnStringInfo() << endl;
+			outf << data[i].returnStringInfo() << endl;
 
 		}
 	}
