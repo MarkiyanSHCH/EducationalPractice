@@ -3,25 +3,39 @@
 
 #include <iostream>
 #include <vector>
-#include "Entity.h"
 
 using namespace std;
 
 
-
+template<class T>
 class Repository
 {
 public:
-	vector<Entity*> data;
+	vector<T*> data;
 	bool sync;
 
-	bool Add(Entity*);
-	virtual void ReadFromStorage() {}
-	virtual void WriteToStorage() {}
+	bool Add(T* t) {
+		data.push_back(t);
+		if (sync)
+			WriteToStorage();
+
+		return true;
+	}
+	virtual void ReadFromStorage() = 0;
+	virtual void WriteToStorage() = 0;
 
 public:
-	Repository(bool sync = false);
-	~Repository();
+	Repository(bool sync = false) {
+		this->sync = sync;
+		ReadFromStorage();
+	}
+	~Repository() {
+		WriteToStorage();
+
+		for (int i = 0; i < data.size(); i++) {
+			delete data[i];
+		}
+	}
 };
 
 #endif // !1

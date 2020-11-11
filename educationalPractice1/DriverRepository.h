@@ -4,7 +4,7 @@
 #include "Repository.h"
 #include "Driver.h"
 
-class DriverRepository : public Repository
+class DriverRepository : public Repository<Driver>
 {
 public:
 	DriverRepository(bool sync = false);

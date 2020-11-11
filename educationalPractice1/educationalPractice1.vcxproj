@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="command.cpp" />
     <ClCompile Include="customer.cpp" />
     <ClCompile Include="CustomerRepository.cpp" />
     <ClCompile Include="driver.cpp" />
@@ -147,17 +146,14 @@
     <ClCompile Include="employee.cpp" />
     <ClCompile Include="EmployeeRepository.cpp" />
     <ClCompile Include="person.cpp" />
-    <ClCompile Include="Repository.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="command.h" />
     <ClInclude Include="customer.h" />
     <ClInclude Include="CustomerRepository.h" />
     <ClInclude Include="driver.h" />
     <ClInclude Include="DriverRepository.h" />
     <ClInclude Include="employee.h" />
     <ClInclude Include="EmployeeRepository.h" />
-    <ClInclude Include="Entity.h" />
     <ClInclude Include="person.h" />
     <ClInclude Include="Repository.h" />
   </ItemGroup>

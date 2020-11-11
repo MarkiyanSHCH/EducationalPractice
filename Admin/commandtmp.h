@@ -4,12 +4,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "../educationalPractice1/employee.h"
-#include "../educationalPractice1/customer.h"
-#include "../educationalPractice1/driver.h"
-#include "../educationalPractice1/EmployeeRepository.h"
-#include "../educationalPractice1/CustomerRepository.h"
-#include "../educationalPractice1/DriverRepository.h"
+#include "EmployeeRepository.h"
+#include "CustomerRepository.h"
+#include "DriverRepository.h"
 using namespace std;
 
 class Command {

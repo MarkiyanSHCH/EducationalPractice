@@ -4,7 +4,7 @@
 #include "Repository.h"
 #include "Employee.h"
 
-class EmployeeRepository : public Repository
+class EmployeeRepository : public Repository<Employee>
 {
 public:
 	EmployeeRepository(bool sync = false);

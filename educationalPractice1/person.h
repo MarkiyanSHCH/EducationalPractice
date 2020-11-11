@@ -3,10 +3,9 @@
 
 #include <iostream>
 #include <string>
-#include "Entity.h"
 using namespace std;
 
-class Person: public Entity {
+class Person {
 protected:
 	string firstName;
 	string lastName;

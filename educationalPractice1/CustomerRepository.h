@@ -4,7 +4,7 @@
 #include "Repository.h"
 #include "Customer.h"
 
-class CustomerRepository : public Repository
+class CustomerRepository : public Repository<Customer>
 {
 public:
 	CustomerRepository(bool sync = false);
